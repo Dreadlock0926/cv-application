@@ -6,19 +6,41 @@ const EducationComponent = ({ id, setEducation }) => {
   const [degree, setDegree] = useState("");
   const [graduation, setGraduation] = useState("");
 
+  const schoolRef = useRef(null);
+  const degreeRef = useRef(null);
+  const graduationRef = useRef(null);
+
+  const submitRef = useRef(null);
+
   const setEducationObject = () => {
-    const educationObject = {
-      school: school,
-      qualification: degree,
-      graduation: graduation,
-    };
-    setEducation((prevState) => ({ ...prevState, [id]: educationObject }));
+    if (submitRef.current.innerText === "Edit") {
+      schoolRef.current.readOnly = false;
+      degreeRef.current.readOnly = false;
+      graduationRef.current.readOnly = false;
+
+      submitRef.current.innerText = "Submit";
+      return;
+    } else {
+      const educationObject = {
+        school: school,
+        qualification: degree,
+        graduation: graduation,
+      };
+      setEducation((prevState) => ({ ...prevState, [id]: educationObject }));
+
+      schoolRef.current.readOnly = true;
+      degreeRef.current.readOnly = true;
+      graduationRef.current.readOnly = true;
+
+      submitRef.current.innerText = "Edit";
+    }
   };
 
   return (
     <form>
       <label htmlFor="school">Enter your school:</label>
       <input
+        ref={schoolRef}
         type="text"
         id="school"
         value={school}
@@ -26,6 +48,7 @@ const EducationComponent = ({ id, setEducation }) => {
       />
       <label htmlFor="degree">Enter your qualification:</label>
       <input
+        ref={degreeRef}
         type="text"
         id="degree"
         value={degree}
@@ -33,12 +56,13 @@ const EducationComponent = ({ id, setEducation }) => {
       />
       <label htmlFor="graduation">Enter your graduation date:</label>
       <input
+        ref={graduationRef}
         type="date"
         id="graduation"
         value={graduation}
         onChange={(e) => setGraduation(e.target.value)}
       />
-      <button type="button" onClick={setEducationObject}>
+      <button ref={submitRef} type="button" onClick={setEducationObject}>
         Submit
       </button>
     </form>
