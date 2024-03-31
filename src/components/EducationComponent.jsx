@@ -62,8 +62,13 @@ const EducationComponent = ({ id, setEducation }) => {
         value={graduation}
         onChange={(e) => setGraduation(e.target.value)}
       />
-      <button ref={submitRef} type="button" onClick={setEducationObject}>
-        Submit
+      <button
+        className="submit-button-contact"
+        ref={submitRef}
+        type="button"
+        onClick={setEducationObject}
+      >
+        SUBMIT
       </button>
     </form>
   );

@@ -47,43 +47,48 @@ const ContactComponent = ({ setContact }) => {
 
   return (
     <form>
-      <label htmlFor="name">Enter your name:</label>
+      <label htmlFor="name">NAME</label>
       <input
         ref={nameRef}
         onChange={(e) => setName(e.target.value)}
         type="text"
         id="name"
       />
-      <label htmlFor="email">Enter your email:</label>
+      <label htmlFor="email">EMAIL</label>
       <input
         ref={emailRef}
         onChange={(e) => setEmail(e.target.value)}
         type="email"
         id="email"
       />
-      <label htmlFor="phone">Enter your phone number:</label>
+      <label htmlFor="phone">CONTACT NUMBER</label>
       <input
         ref={phoneRef}
         onChange={(e) => setPhone(e.target.value)}
         type="tel"
         id="phone"
       />
-      <label htmlFor="address">Enter your address:</label>
+      <label htmlFor="address">ADDRESS</label>
       <input
         ref={addressRef}
         onChange={(e) => setAddress(e.target.value)}
         type="text"
         id="address"
       />
-      <label htmlFor="portfolioLink">Enter your portfolio link:</label>
+      <label htmlFor="portfolioLink">PORTFOLIO LINK</label>
       <input
         ref={portfolioLinkRef}
         onChange={(e) => setPortfolioLink(e.target.value)}
         type="url"
         id="portfolioLink"
       />
-      <button ref={submitRef} onClick={submitContact} type="button">
-        Submit
+      <button
+        className="submit-button-contact"
+        ref={submitRef}
+        onClick={submitContact}
+        type="button"
+      >
+        SUBMIT
       </button>
     </form>
   );

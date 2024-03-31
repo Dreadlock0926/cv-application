@@ -4,6 +4,7 @@ import ExperienceComponent from "../components/ExperienceComponent";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import "./DetailsPage.css";
 
 function DetailsPage() {
   const [contact, setContact] = useState({});
@@ -52,14 +53,24 @@ function DetailsPage() {
 
   return (
     <>
-      <h2>Contact Information</h2>
-      <ContactComponent setContact={setContact} />
-      <h2>Education</h2>
-      {educationComponents}
-      <button onClick={addEducationTab}>Add Education Tab</button>
-      <h2>Experience</h2>
-      {experienceComponents}
-      <button onClick={addExperienceTab}>Add Experience Tab</button>
+      <div class="dp-contact-container">
+        <h2>CONTACT INFORMATION</h2>
+        <ContactComponent setContact={setContact} />
+      </div>
+      <div class="dp-education-container">
+        <h2>Education</h2>
+        {educationComponents}
+        <button className="add-btn" onClick={addEducationTab}>
+          +
+        </button>
+      </div>
+      <div class="dp-experience-container">
+        <h2>Experience</h2>
+        {experienceComponents}
+        <button className="add-btn" onClick={addExperienceTab}>
+          +
+        </button>
+      </div>
       <button onClick={goToCVPage} type="button">
         Create CV
       </button>

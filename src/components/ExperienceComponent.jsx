@@ -88,8 +88,13 @@ const ExperienceComponent = ({ id, setExperience }) => {
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
-      <button ref={submitRef} type="button" onClick={setExperienceObject}>
-        Submit
+      <button
+        className="submit-button-contact"
+        ref={submitRef}
+        type="button"
+        onClick={setExperienceObject}
+      >
+        SUBMIT
       </button>
     </form>
   );
