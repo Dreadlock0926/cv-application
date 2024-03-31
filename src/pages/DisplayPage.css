@@ -1,0 +1,42 @@
+* {
+    font-family: Garamond, sans-serif;
+}
+
+.contact-container h1 {
+    margin-bottom: 0px;
+    font-size: 3rem;
+}
+
+.contact-container {
+    border-bottom: 1px solid black;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+}
+
+.contact-info > * {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.contact-info > div {
+    display: flex;
+    align-items: center;
+}
+
+.point {
+    margin-right: 10px;
+}
+
+h2 {
+    font-weight: bolder;
+    border-bottom: 1px solid black;
+}
+
+.education-info, .experience-info {
+    display: flex;
+    justify-content: space-between;
+}
+
